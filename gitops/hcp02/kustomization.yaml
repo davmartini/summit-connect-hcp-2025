@@ -23,14 +23,14 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/networking/clusterNetwork
-      value: "-cidr: 10.136.0.0/14"
+      value: 10.136.0.0/14
 
 - target: ## serviceNetworkCIDR
     kind: HostedCluster
     name: template
   patch: |-                   
     - op: replace
-      path: /spec/networking/serviceNetwork/cidr
+      path: /spec/networking/serviceNetwork
       value: 172.31.0.0/16
 
 - target: ## InfraID
