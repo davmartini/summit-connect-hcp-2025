@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hcp-clusters
+  name: hcp02
   namespace: openshift-gitops
 spec:
   project: default
@@ -9,5 +9,47 @@ spec:
     repoURL: https://github.com/davmartini/summit-connect-hcp-2025.git
     targetRevision: HEAD
     path: gitops/hcp02
+  destination:
+    server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hcp03
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/davmartini/summit-connect-hcp-2025.git
+    targetRevision: HEAD
+    path: gitops/hcp03
+  destination:
+    server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hcp04
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/davmartini/summit-connect-hcp-2025.git
+    targetRevision: HEAD
+    path: gitops/hcp04
+  destination:
+    server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hcp05
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/davmartini/summit-connect-hcp-2025.git
+    targetRevision: HEAD
+    path: gitops/hcp05
   destination:
     server: https://kubernetes.default.svc
