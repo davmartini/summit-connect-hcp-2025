@@ -9,6 +9,7 @@ metadata:
     cloud: BareMetal
     vendor: OpenShift
     name: 'hcp01'
+    env: dev
     cluster.open-cluster-management.io/clusterset: 'managed-clusters'
   name: 'hcp01'
 spec:
