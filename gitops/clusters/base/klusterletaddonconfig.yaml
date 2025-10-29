@@ -1,0 +1,19 @@
+apiVersion: agent.open-cluster-management.io/v1
+kind: KlusterletAddonConfig
+metadata:
+  name: 'hcp01'
+  namespace: 'hcp01'
+spec:
+  clusterName: 'hcp01'
+  clusterNamespace: 'hcp01'
+  clusterLabels:
+    cloud: BareMetal
+    vendor: OpenShift
+  applicationManager:
+    enabled: true
+  policyController:
+    enabled: true
+  searchCollector:
+    enabled: true
+  certPolicyController:
+    enabled: true

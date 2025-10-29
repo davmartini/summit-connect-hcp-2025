@@ -1,0 +1,29 @@
+apiVersion: hypershift.openshift.io/v1beta1
+kind: NodePool
+metadata:
+  name: 'hcp01-nodepool01'
+  namespace: 'clusters'
+spec:
+  arch: amd64
+  clusterName: 'hcp01'
+  replicas: 3
+  management:
+    autoRepair: false
+    upgradeType: Replace
+  platform:
+    type: KubeVirt
+    kubevirt:
+      compute:
+        cores: 3
+        memory: 8Gi
+      rootVolume:
+        type: Persistent
+        persistent:
+          size: 32Gi
+          accessModes:
+            - ReadWriteMany
+          storageClass: ocs-storagecluster-ceph-rbd-virtualization
+          volumeMode: Block
+      defaultPodNetwork: true
+  release:
+    image: quay.io/openshift-release-dev/ocp-release:4.19.17-multi
