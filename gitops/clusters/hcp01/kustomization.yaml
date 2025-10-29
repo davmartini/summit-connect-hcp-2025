@@ -15,7 +15,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/networking/clusterNetwork
-      value: 10.136.0.0/14
+      value: 10.137.0.0/14
 
 - target: ## serviceNetworkCIDR
     kind: HostedCluster
