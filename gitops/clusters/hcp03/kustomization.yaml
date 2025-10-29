@@ -1,0 +1,128 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+patches:
+- target: ## ClusterName
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /metadata/name
+      value: hcp03
+
+- target: ## OCP Version
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/release/image
+      value: quay.io/openshift-release-dev/ocp-release:4.19.17-multi
+
+- target: ## ClusterNetworkCIDR
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/networking/clusterNetwork
+      value: 10.137.0.0/14
+
+- target: ## serviceNetworkCIDR
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/networking/serviceNetwork
+      value: 172.32.0.0/16
+
+- target: ## InfraID
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/infraID
+      value: hcp03
+
+- target: ## NodePool name
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /metadata/name
+      value: hcp03
+
+- target: ## Assosiated cluster name
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/clusterName
+      value: hcp03
+
+- target: ## Number of worker
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/replicas
+      value: 2 
+
+- target: ## Number of core by worker
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/platform/kubevirt/compute/cores
+      value: 4
+
+- target: ## Number of MEM by worker
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/platform/kubevirt/compute/memory
+      value: 8Gi
+
+- target: ## OCP Release
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/release/image
+      value: quay.io/openshift-release-dev/ocp-release:4.19.17-multi
+
+- target: ## ManagedCluster lablel
+    kind: ManagedCluster
+  patch: |-                   
+    - op: replace
+      path: /metadata/labels/name
+      value: hcp03
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /metadata/name
+      value: hcp03
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /metadata/namespace
+      value: hcp03
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /spec/clusterName
+      value: hcp03
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /spec/clusterNamespace
+      value: hcp03
+
+bases:
+- ../base
