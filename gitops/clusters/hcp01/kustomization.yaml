@@ -57,5 +57,21 @@ patches:
       path: /spec/replicas
       value: 2 
 
+- target: ## Number of core by worker
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/platform/kubevirt/compute/cores
+      value: 4
+
+- target: ## Number of MEM by worker
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/platform/kubevirt/compute/memory
+      value: 12 
+
 bases:
 - ../base
