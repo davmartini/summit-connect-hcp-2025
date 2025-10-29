@@ -24,6 +24,3 @@ patches:
     name: template
 bases:
 - ../base
-
-
-serviceNetwork
