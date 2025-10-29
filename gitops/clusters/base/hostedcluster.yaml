@@ -1,7 +1,7 @@
 apiVersion: hypershift.openshift.io/v1beta1
 kind: HostedCluster
 metadata:
-  name: 'hcp01'
+  name: 'template'
   namespace: 'clusters'
   labels:
     "cluster.open-cluster-management.io/clusterset": 'managed-clusters'
