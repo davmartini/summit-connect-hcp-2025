@@ -6,6 +6,9 @@ metadata:
   labels:
     "cluster.open-cluster-management.io/clusterset": 'managed-clusters'
 spec:
+  ntp:
+    servers:
+      - 10.11.0.10
   etcd:
     managed:
       storage:
