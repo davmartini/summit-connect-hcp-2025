@@ -15,5 +15,15 @@ patches:
   target:
     kind: HostedCluster
     name: template
+- patch: |-                   ## serviceNetworkCIDR
+  - op: replace
+    path: /spec/networking/serviceNetwork
+    value: 172.32.0.0/16
+  target:
+    kind: HostedCluster
+    name: template
 bases:
 - ../base
+
+
+serviceNetwork
