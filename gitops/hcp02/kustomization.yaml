@@ -22,7 +22,7 @@ patches:
     name: template
   patch: |-                   
     - op: replace
-      path: /spec/networking/clusterNetwork/-
+      path: /spec/networking/clusterNetwork
       value: 
         name: cidr
         value: 10.132.0.0/14
