@@ -1,12 +1,29 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 patches:
-- target:            
+- target: ## ClusterName
     kind: HostedCluster
     name: template
   patch: |-                   
     - op: replace
       path: /metadata/name
       value: hcp01
+
+- target: ## ClusterNetworkCIDR
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/networking/clusterNetwork
+      value: 10.136.0.0/14
+
+- target: ## serviceNetworkCIDR
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/networking/serviceNetwork
+      value: 172.32.0.0/16
+
 bases:
 - ../base
