@@ -149,5 +149,12 @@ patches:
       path: /spec/clusterNamespace
       value: hcp03
 
+- target: ## customize worker
+    kind: ConfigMap
+  patch: |-                   
+    - op: replace
+      path: /metadata/namespace
+      value: hcp03
+
 bases:
 - ../base
