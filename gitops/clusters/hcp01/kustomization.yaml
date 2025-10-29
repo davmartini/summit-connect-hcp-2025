@@ -7,7 +7,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /metadata/name
-      value: hcp01
+      value: hcp02
 
 - target: ## ClusterNetworkCIDR
     kind: HostedCluster
@@ -24,6 +24,30 @@ patches:
     - op: replace
       path: /spec/networking/serviceNetwork
       value: 172.32.0.0/16
+
+- target: ## InfraID
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/infraID
+      value: hcp02
+
+- target: ## NodePool name
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /metadata/name
+      value: hcp02
+
+- target: ## NodePool name
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /metadata/name
+      value: hcp02
 
 bases:
 - ../base

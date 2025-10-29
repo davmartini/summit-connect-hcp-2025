@@ -38,7 +38,7 @@ spec:
           storageClassMapping:
             - infraStorageClassName: ocs-storagecluster-ceph-rbd
               guestStorageClassName: ocp-virt-rbd
-  infraID: 'hcp01'
+  infraID: 'template'
   services:
     - service: OAuthServer
       servicePublishingStrategy:

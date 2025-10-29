@@ -1,8 +1,8 @@
 apiVersion: hypershift.openshift.io/v1beta1
 kind: NodePool
 metadata:
-  name: 'hcp01-nodepool01'
-  namespace: 'clusters'
+  name: template
+  namespace: clusters
 spec:
   arch: amd64
   clusterName: 'hcp01'
