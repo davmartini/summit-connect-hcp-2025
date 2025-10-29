@@ -22,8 +22,10 @@ patches:
     name: template
   patch: |-                   
     - op: replace
-      path: /spec/networking/clusterNetwork
-      value: "- cidr: 10.132.0.0/14"
+      path: /spec/networking/clusterNetwork/-
+      value: 
+        name: cidr
+        value: 10.132.0.0/14
 
 - target: ## serviceNetworkCIDR
     kind: HostedCluster
