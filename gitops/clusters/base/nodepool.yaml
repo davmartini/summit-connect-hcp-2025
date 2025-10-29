@@ -5,7 +5,7 @@ metadata:
   namespace: clusters
 spec:
   arch: amd64
-  clusterName: 'hcp01'
+  clusterName: 'template'
   replicas: 3
   management:
     autoRepair: false

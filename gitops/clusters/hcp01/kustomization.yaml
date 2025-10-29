@@ -41,13 +41,21 @@ patches:
       path: /metadata/name
       value: hcp02
 
-- target: ## NodePool name
+- target: ## Assosiated cluster name
     kind: NodePool
     name: template
   patch: |-                   
     - op: replace
-      path: /metadata/name
+      path: /spec/clusterName
       value: hcp02
+
+- target: ## Number of worker
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/replicas
+      value: 2 
 
 bases:
 - ../base
