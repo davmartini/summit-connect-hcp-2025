@@ -24,6 +24,5 @@ spec:
             - ReadWriteMany
           storageClass: ocs-storagecluster-ceph-rbd-virtualization
           volumeMode: Block
-      defaultPodNetwork: true
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.19.17-multi
