@@ -96,6 +96,13 @@ patches:
       path: /metadata/labels/name
       value: hcp02
 
+- target: ## ManagedCluster lablel
+    kind: ManagedCluster
+  patch: |-                   
+    - op: replace
+      path: /metadata/name
+      value: hcp02
+
 - target: ## KlusterletAddonConfig name
     kind: KlusterletAddonConfig
   patch: |-                   
