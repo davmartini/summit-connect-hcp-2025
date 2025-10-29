@@ -96,11 +96,32 @@ patches:
       path: /metadata/labels/name
       value: hcp02
 
-- target: ## ManagedCluster name
-    kind: ManagedCluster
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
   patch: |-                   
     - op: replace
       path: /metadata/name
+      value: hcp02
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /metadata/namespace
+      value: hcp02
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /spec/clusterName
+      value: hcp02
+
+- target: ## KlusterletAddonConfig name
+    kind: KlusterletAddonConfig
+  patch: |-                   
+    - op: replace
+      path: /spec/clusterNamespace
       value: hcp02
 
 bases:
