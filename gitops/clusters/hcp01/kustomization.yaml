@@ -71,7 +71,15 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/platform/kubevirt/compute/memory
-      value: 12 
+      value: 12Gi
+
+- target: ## OCP Release
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/release/image
+      value: quay.io/openshift-release-dev/ocp-release:4.19.16-multi
 
 bases:
 - ../base
