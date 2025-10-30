@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-ntp
+  namespace: template
+data:
+  config: |
+    apiVersion: machineconfiguration.openshift.io/v1
+    kind: MachineConfig
+    metadata:
+      name: 99-custom-dns
+      labels:
+        machineconfiguration.openshift.io/role: worker
+    spec:
+      config:
+        ignition:
+          version: 3.2.0
+        storage:
+          files:
+          - path: /etc/resolv.conf
+            mode: 0644
+            overwrite: true
+            contents:
+              inline: |
+                nameserver 10.6.186.5
+                nameserver 10.11.0.14
+                nameserver 10.11.0.13
+                search rh.hpecic.net
+
+

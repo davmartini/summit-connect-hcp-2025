@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: custom-ntp
+  name: custom-dns
   namespace: template
 data:
   config: |
@@ -22,3 +22,4 @@ data:
             mode: 420
             overwrite: true
             path: /etc/chrony.conf
+
