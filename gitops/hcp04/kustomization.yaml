@@ -149,21 +149,5 @@ patches:
       path: /spec/clusterNamespace
       value: hcp04
 
-- target: ## customize worker
-    kind: ConfigMap
-    name: custom-ntp
-  patch: |-                   
-    - op: replace
-      path: /metadata/namespace
-      value: hcp04
-
-- target: ## customize worker
-    kind: ConfigMap
-    name: custom-dns
-  patch: |-                   
-    - op: replace
-      path: /metadata/namespace
-      value: hcp04
-
 bases:
 - ../base

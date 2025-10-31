@@ -4,6 +4,9 @@ metadata:
   name: template
   namespace: clusters
 spec:
+  config:
+  - name: custom-dns
+  - name: custom-ntp
   arch: amd64
   clusterName: 'template'
   replicas: 3

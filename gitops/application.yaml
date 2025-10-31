@@ -1,6 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: hcp-common-conf
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/davmartini/summit-connect-hcp-2025.git
+    targetRevision: HEAD
+    path: gitops/common
+  destination:
+    server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
   name: hcp02
   namespace: openshift-gitops
 spec:

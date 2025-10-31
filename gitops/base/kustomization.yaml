@@ -6,5 +6,3 @@ resources:
 - nodepool.yaml
 - managedcluster.yaml
 - klusterletaddonconfig.yaml
-- custom-dns.yaml
-- custom-ntp.yaml
