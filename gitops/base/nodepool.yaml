@@ -4,11 +4,13 @@ metadata:
   name: template
   namespace: clusters
 spec:
+  autoScaling:
+    min: 2
+    max: 4
   config:
   - name: custom-ntp
   arch: amd64
   clusterName: 'template'
-  replicas: 3
   management:
     autoRepair: false
     upgradeType: Replace
