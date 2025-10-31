@@ -68,14 +68,6 @@ patches:
       path: /spec/clusterName
       value: hcp04
 
-- target: ## Number of worker
-    kind: NodePool
-    name: template
-  patch: |-                   
-    - op: replace
-      path: /spec/replicas
-      value: 3
-
 - target: ## Number of core by worker
     kind: NodePool
     name: template
