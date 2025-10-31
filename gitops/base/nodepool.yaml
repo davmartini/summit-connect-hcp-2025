@@ -6,7 +6,6 @@ metadata:
 spec:
   config:
   - name: custom-ntp
-  - name: custom-dns
   arch: amd64
   clusterName: 'template'
   replicas: 3
