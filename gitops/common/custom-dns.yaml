@@ -8,14 +8,17 @@ data:
     apiVersion: machineconfiguration.openshift.io/v1
     kind: MachineConfig
     metadata:
-      name: custom-dns
+      name: 99-worker-dns
+      labels:
+        machineconfiguration.openshift.io/role: worker
     spec:
       config:
         ignition:
           version: 3.2.0
         storage:
           files:
-            - path: /etc/NetworkManager/conf.d/custom-dns.conf
+            - path: /etc/NetworkManager/conf.d/dns-servers.conf
               mode: 0644
               contents:
-                source: data:text/plain;charset=utf-8;base64,W21haW5dCmRucz1ub25lCgpbZ2xvYmFsLWRucy1kb21haW4tKl0KbmFtZXNlcnZlcnM9MTAuNi4xODYuNSwxMC4xMS4wLjE0LDEwLjExLjAuMTM=
+                source: data:text/plain;charset=utf-8;base64,I2ZvcmNlIGRucwpkb21haW49ZXhhbXBsZS5jb20KbmFtZXNlcnZlcj0xMC42LjE4Ni41IDEwLjExLjAuMTQgMTAuMTEuMC4xMw==
+

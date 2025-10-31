@@ -10,7 +10,7 @@ data:
     metadata:
       labels:
         machineconfiguration.openshift.io/role: worker
-      name: custom-ntp
+      name: 99-custom-ntp
     spec:
       config:
         ignition:
