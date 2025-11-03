@@ -38,6 +38,8 @@ spec:
           storageClassMapping:
             - infraStorageClassName: ocs-storagecluster-ceph-rbd
               guestStorageClassName: ocp-virt-rbd
+            - infraStorageClassName: ocs-storagecluster-cephfs
+              guestStorageClassName: ocp-virt-file
   infraID: 'template'
   services:
     - service: OAuthServer
