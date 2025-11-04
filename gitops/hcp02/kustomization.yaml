@@ -92,6 +92,14 @@ patches:
       path: /spec/release/image
       value: quay.io/openshift-release-dev/ocp-release:4.19.16-multi
 
+- target: ## worker Replicas
+    kind: NodePool
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/release/replicas
+      value: 2
+
 - target: ## ManagedCluster lablel
     kind: ManagedCluster
   patch: |-                   

@@ -8,7 +8,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /metadata/name
-      value: hcp03
+      value: hcp01
 
 - target: ## ClusterName
     kind: HostedCluster
@@ -16,7 +16,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /metadata/name
-      value: hcp03
+      value: hcp01
 
 - target: ## OCP Version
     kind: HostedCluster
@@ -33,7 +33,7 @@ patches:
     - op: replace
       path: /spec/networking/clusterNetwork/0
       value: 
-        cidr: 10.133.0.0/14
+        cidr: 10.132.0.0/14
 
 - target: ## serviceNetworkCIDR
     kind: HostedCluster
@@ -42,7 +42,7 @@ patches:
     - op: replace
       path: /spec/networking/serviceNetwork/0
       value: 
-        cidr: 172.32.0.0/16
+        cidr: 172.31.0.0/16
 
 - target: ## InfraID
     kind: HostedCluster
@@ -50,7 +50,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/infraID
-      value: hcp03
+      value: hcp01
 
 - target: ## NodePool name
     kind: NodePool
@@ -58,7 +58,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /metadata/name
-      value: hcp03
+      value: hcp01
 
 - target: ## Assosiated cluster name
     kind: NodePool
@@ -66,7 +66,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/clusterName
-      value: hcp03
+      value: hcp01
 
 - target: ## Number of core by worker
     kind: NodePool
@@ -105,7 +105,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /metadata/labels/name
-      value: hcp03
+      value: hcp01
 
 - target: ## ManagedCluster lablel
     kind: ManagedCluster
@@ -119,35 +119,35 @@ patches:
   patch: |-                   
     - op: replace
       path: /metadata/name
-      value: hcp03
+      value: hcp01
 
 - target: ## KlusterletAddonConfig name
     kind: KlusterletAddonConfig
   patch: |-                   
     - op: replace
       path: /metadata/name
-      value: hcp03
+      value: hcp01
 
 - target: ## KlusterletAddonConfig name
     kind: KlusterletAddonConfig
   patch: |-                   
     - op: replace
       path: /metadata/namespace
-      value: hcp03
+      value: hcp01
 
 - target: ## KlusterletAddonConfig name
     kind: KlusterletAddonConfig
   patch: |-                   
     - op: replace
       path: /spec/clusterName
-      value: hcp03
+      value: hcp01
 
 - target: ## KlusterletAddonConfig name
     kind: KlusterletAddonConfig
   patch: |-                   
     - op: replace
       path: /spec/clusterNamespace
-      value: hcp03
+      value: hcp01
 
 bases:
 - ../base

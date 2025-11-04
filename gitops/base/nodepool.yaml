@@ -4,9 +4,6 @@ metadata:
   name: template
   namespace: clusters
 spec:
-  autoScaling:
-    min: 2
-    max: 4
   config:
   - name: custom-ntp
   arch: amd64
@@ -30,3 +27,4 @@ spec:
           volumeMode: Block
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.19.17-multi
+  replicas: 2
