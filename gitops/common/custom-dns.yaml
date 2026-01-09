@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: custom-ntp
+  name: custom-dns
   namespace: clusters
 data:
   config: |
@@ -10,7 +10,7 @@ data:
     metadata:
       labels:
         machineconfiguration.openshift.io/role: worker
-      name: 99-custom-ntp
+      name: 99-custom-dns
     spec:
       config:
         ignition:
