@@ -24,7 +24,15 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/release/image
-      value: quay.io/openshift-release-dev/ocp-release:4.19.16-multi
+      value: quay.io/openshift-release-dev/ocp-release:4.20.8-multi
+
+- target: ## OCP Channel
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/channel
+      value: stable-4.20
 
 - target: ## ClusterNetworkCIDR
     kind: HostedCluster
@@ -74,7 +82,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/platform/kubevirt/compute/cores
-      value: 4
+      value: 6
 
 - target: ## Number of MEM by worker
     kind: NodePool
@@ -90,7 +98,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/release/image
-      value: quay.io/openshift-release-dev/ocp-release:4.19.16-multi
+      value: quay.io/openshift-release-dev/ocp-release:4.20.8-multi
 
 - target: ## worker Replicas
     kind: NodePool
@@ -98,7 +106,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/release/replicas
-      value: 2
+      value: 3
 
 - target: ## ManagedCluster lablel
     kind: ManagedCluster

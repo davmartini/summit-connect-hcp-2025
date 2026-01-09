@@ -6,6 +6,8 @@ metadata:
 spec:
   config:
   - name: custom-ntp
+  - name: custom-dns
+  - name: custom-nested-virt
   arch: amd64
   clusterName: 'template'
   management:
@@ -25,6 +27,9 @@ spec:
             - ReadWriteMany
           storageClass: ocs-storagecluster-ceph-rbd-virtualization
           volumeMode: Block
+      additionalNetworks:
+      - name: default/localnet-vlan1187
+      attachDefaultNetwork: false
   release:
-    image: quay.io/openshift-release-dev/ocp-release:4.19.17-multi
+    image: quay.io/openshift-release-dev/ocp-release:4.20.8-multi
   replicas: 2

@@ -26,6 +26,14 @@ patches:
       path: /spec/release/image
       value: quay.io/openshift-release-dev/ocp-release:4.19.16-multi
 
+- target: ## OCP Channel
+    kind: HostedCluster
+    name: template
+  patch: |-                   
+    - op: replace
+      path: /spec/channel
+      value: stable-4.20
+
 - target: ## ClusterNetworkCIDR
     kind: HostedCluster
     name: template
