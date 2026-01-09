@@ -105,7 +105,7 @@ patches:
     name: template
   patch: |-                   
     - op: replace
-      path: /spec/release/replicas
+      path: /spec/replicas
       value: 3
 
 - target: ## ManagedCluster lablel
