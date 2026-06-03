@@ -22,7 +22,7 @@ spec:
       rootVolume:
         type: Persistent
         persistent:
-          size: 32Gi
+          size: 120Gi
           accessModes:
             - ReadWriteMany
           storageClass: ocs-storagecluster-ceph-rbd-virtualization
