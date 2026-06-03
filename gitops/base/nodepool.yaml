@@ -27,9 +27,7 @@ spec:
             - ReadWriteMany
           storageClass: ocs-storagecluster-ceph-rbd-virtualization
           volumeMode: Block
-      additionalNetworks:
-      - name: default/localnet-vlan1187
-      attachDefaultNetwork: false
+      attachDefaultNetwork: true
   release:
     image: quay.io/openshift-release-dev/ocp-release:4.20.8-multi
   replicas: 2
