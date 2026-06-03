@@ -90,7 +90,7 @@ patches:
   patch: |-                   
     - op: replace
       path: /spec/platform/kubevirt/compute/memory
-      value: 20Gi
+      value: 10Gi
 
 - target: ## OCP Release
     kind: NodePool
